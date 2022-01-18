@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Poppins:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 240px 1fr 1fr 240px;
+  grid-template-rows: min-content 1fr min-content;
+  grid-template-areas:
+    "header header header ."
+    "main-content main-content main-content ."
+    "footer footer footer footer";
+  padding: 4rem 1rem;
+}
+
+header {
+  grid-area: header;
+  margin-bottom: 3em;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+header > h1 {
+  font-family: 'PT Serif', serif;
+  font-weight: 700;
+  font-size: 31px;
+}
+
+.subheader {
+  margin-top: 2em;
+}
+
+.subheader > p {
+  font-family: 'Poppins', serif;
+  font-size: 14px;
+}
+
+.subheader > .subheader-main {
+  font-weight: 600;
+  line-height: 27px;
+}
+
+.image-container {
+  display: flex;
+}
+
+.image-container > span {
+  writing-mode: vertical-lr;
+  text-transform: uppercase;
+  size: 10px;
+}
+
+.image {
+  height: min(50vw, 220px);
+}
+
+.main-content {
+  grid-area: main-content;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 40px;
+}
+
+.grid-box:nth-child(2),
+.grid-box:nth-child(4),
+.grid-box:nth-child(6) {
+  margin-top: 3em;
+}
+
+.grid-box > span {
+  font-family: 'Poppins', serif;
+  font-weight: 600;
+}
+
+footer {
+  grid-area: footer;
+  text-align: center;
+  margin-top: 2em;
+  font-family: 'Poppins', serif;
+  font-size: 12px;
+  width: 90vw;
+}
+
+@media screen and (min-width: 768px) {
+
+  body {
+    grid-template-areas:
+    ". header header ."
+    ". main-content main-content ."
+    "footer footer footer footer";
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  header > h1 {
+    font-family: 'PT Serif', serif;
+    font-weight: 700;
+    font-size: 36px;
+  }
+
+  .subheader {
+    width: 25vw;
+    margin-top: 0;
+    margin-right: 7em;
+  }
+
+  .subheader > p {
+    font-family: 'Poppins', serif;
+    font-size: 18px;
+  }
+
+  .main-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-box:nth-child(1),
+  .grid-box:nth-child(3),
+  .grid-box:nth-child(4),
+  .grid-box:nth-child(6) {
+    margin-top: 0;
+  }
+
+  .grid-box:nth-child(2),
+  .grid-box:nth-child(5) {
+    margin-top: 3em;
+  }
+
+  footer {
+    font-size: 16px;
+    width: 90vw;
+  }
+}
